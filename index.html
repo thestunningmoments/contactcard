@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Stunning Moment Studios and Events</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 30px 18px;
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        linear-gradient(
+          180deg,
+          #ffe7ef 0%,
+          #fff7fa 50%,
+          #ffffff 100%
+        );
+      color: #111111;
+      display: flex;
+      justify-content: center;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 470px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.96);
+      border: 2px solid #e4b74f;
+      border-radius: 28px;
+      padding: 28px 22px 30px;
+      text-align: center;
+      box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    .logo {
+      width: 190px;
+      max-width: 75%;
+      height: 190px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #e4b74f;
+      background: #f8d5df;
+      margin-bottom: 20px;
+      box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.10);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 28px;
+      line-height: 1.15;
+      color: #111111;
+    }
+
+    .gold {
+      color: #b78a20;
+    }
+
+    .name {
+      margin-top: 10px;
+      font-size: 20px;
+      font-weight: 700;
+      color: #d95f83;
+    }
+
+    .subtitle {
+      margin: 8px 0 24px;
+      color: #555555;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .button {
+      display: block;
+      width: 100%;
+      margin: 11px 0;
+      padding: 15px 18px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-size: 17px;
+      font-weight: 700;
+      border: 2px solid #111111;
+      cursor: pointer;
+      transition: transform 0.15s ease;
+    }
+
+    .button:active {
+      transform: scale(0.98);
+    }
+
+    .save {
+      background: #d95f83;
+      color: white;
+      border-color: #d95f83;
+      font-size: 19px;
+      padding: 17px 18px;
+    }
+
+    .goldButton {
+      background: #e4b74f;
+      color: #111111;
+      border-color: #e4b74f;
+    }
+
+    .dark {
+      background: #111111;
+      color: white;
+    }
+
+    .light {
+      background: white;
+      color: #111111;
+    }
+
+    .social {
+      background: #fff1f5;
+      color: #111111;
+      border-color: #edb5c5;
+    }
+
+    .divider {
+      height: 1px;
+      background: #ead7dd;
+      margin: 22px 0;
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #777777;
+      line-height: 1.5;
+    }
+
+    .small {
+      font-size: 13px;
+      color: #777777;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="page">
+
+    <div class="card">
+
+      <img
+        src="pink-logo.jpeg"
+        alt="Stunning Moment Studios and Events"
+        class="logo"
+      />
+
+      <h1>
+        Stunning Moment
+        <span class="gold">
+          Studios and Events
+        </span>
+      </h1>
+
+      <div class="name">
+        Brianne Pope
+      </div>
+
+      <div class="subtitle">
+        Event Design • Balloon Décor • Photography
+        <br />
+        Metro Detroit
+      </div>
+
+      <button
+        class="button save"
+        onclick="saveContact()"
+      >
+        💗 Save My Contact
+      </button>
+
+      <div class="small">
+        Tap to add Stunning Moment Studios and Events
+        directly to your contacts.
+      </div>
+
+      <div class="divider"></div>
+
+      <a
+        class="button goldButton"
+        href="tel:+17345894422"
+      >
+        📞 Call
+      </a>
+
+      <a
+        class="button light"
+        href="sms:+17345894422"
+      >
+        💬 Text
+      </a>
+
+      <a
+        class="button dark"
+        href="mailto:thestunningmoments@gmail.com"
+      >
+        ✉️ Email
+      </a>
+
+      <div class="divider"></div>
+
+      <a
+        class="button social"
+        href="https://www.facebook.com/thestunningmoments"
+        target="_blank"
+      >
+        Facebook
+      </a>
+
+      <a
+        class="button social"
+        href="https://www.instagram.com/thestunningmoments"
+        target="_blank"
+      >
+        Instagram
+      </a>
+
+      <a
+        class="button social"
+        href="https://linktr.ee/thestunningmoments"
+        target="_blank"
+      >
+        Linktree
+      </a>
+
+      <div class="footer">
+        Stunning Moment Studios and Events
+        <br />
+        Creating Stunning Moments, One Celebration at a Time
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <script>
+
+    async function saveContact() {
+
+      let photoLine = "";
+
+      try {
+
+        const response = await fetch("pink-logo.jpeg");
+        const blob = await response.blob();
+
+        const base64 = await new Promise(
+          (resolve, reject) => {
+
+            const reader = new FileReader();
+
+            reader.onloadend = () => {
+              const result = reader.result;
+              const base64Data =
+                result.split(",")[1];
+
+              resolve(base64Data);
+            };
+
+            reader.onerror = reject;
+
+            reader.readAsDataURL(blob);
+          }
+        );
+
+        photoLine =
+          "PHOTO;ENCODING=b;TYPE=JPEG:" +
+          base64 +
+          "\r\n";
+
+      } catch (error) {
+
+        console.log(
+          "Logo could not be added to contact.",
+          error
+        );
+
+      }
+
+
+      const vcard =
+`BEGIN:VCARD
+VERSION:3.0
+N:Pope;Brianne;;;
+FN:Brianne Pope
+ORG:Stunning Moment Studios and Events
+TEL;TYPE=CELL:+17345894422
+EMAIL;TYPE=INTERNET:thestunningmoments@gmail.com
+URL:https://linktr.ee/thestunningmoments
+item1.URL:https://www.facebook.com/thestunningmoments
+item1.X-ABLabel:Facebook
+item2.URL:https://www.instagram.com/thestunningmoments
+item2.X-ABLabel:Instagram
+${photoLine}END:VCARD`;
+
+
+      const contactBlob =
+        new Blob(
+          [vcard],
+          {
+            type: "text/vcard;charset=utf-8"
+          }
+        );
+
+
+      const contactURL =
+        URL.createObjectURL(contactBlob);
+
+
+      const link =
+        document.createElement("a");
+
+      link.href = contactURL;
+
+      link.download =
+        "Stunning-Moment-Studios-and-Events.vcf";
+
+      document.body.appendChild(link);
+
+      link.click();
+
+      document.body.removeChild(link);
+
+
+      setTimeout(
+        () => {
+          URL.revokeObjectURL(contactURL);
+        },
+        1000
+      );
+
+    }
+
+  </script>
+
+</body>
+</html>
